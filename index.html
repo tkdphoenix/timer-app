@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="<%= htmlWebpackPlugin.options.charset %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="version" content="<%= htmlWebpackPlugin.options.version %>">
+  <meta name="buildDate" content="<%= htmlWebpackPlugin.options.built %>">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+    body {
+      width: 97%;
+      padding: 10px;
+    }
+    .flex {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 94%;
+      margin: 0 auto;
+    }
+    timer-app {
+      margin: 0 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+    <timer-app></timer-app>
+  </div>
+</body>
+</html>
