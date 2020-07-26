@@ -1,0 +1,21 @@
+{
+  "presets": [
+    ["@babel/preset-env", {"corejs": 3, "useBuiltIns": "usage"}]
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-async-generator-functions",
+    "@babel/proposal-class-properties",
+    ["@babel/proposal-decorators", {"decoratorsBeforeExport": true}],
+    "@babel/proposal-json-strings",
+    "@babel/proposal-numeric-separator",
+    "@babel/proposal-object-rest-spread",
+    ["module-resolver", {
+      "extensions": [".js", ".mjs", ".json"],
+      "root": ["./src"],
+      "alias": {
+        "package.json": "./package.json"
+      }
+    }]
+  ]
+}
