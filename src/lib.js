@@ -1,9 +1,9 @@
 export const person = {
-  name: 'John Doe',
-  location: 'Miami', 
-  age: 30,
+	name: 'John Doe',
+	location: 'Miami',
+	age: 30,
 }
 
 export function sayHello(name) {
-  return `Hello ${name}`
+	return `Hello ${name}`
 }

@@ -11,27 +11,25 @@ const PAGE_TITLE = 'Project Timer'
 
 module.exports = {
 	mode: 'development',
-	entry: 
+	entry:
 		// main: `./${config.directories.source}/${config.main}.js`,
-	[
-		`core-js/stable`, 
-		`regenerator-runtime/runtime`,
-		`./src/app.js`,
-	],
+		[`core-js/stable`, `regenerator-runtime/runtime`, `./src/app.js`],
 	output: {
 		filename: '[name].[hash].js',
 		path: PATH_OUTPUT,
 	},
 	devtool: 'source-map',
 	module: {
-		rules: [{
-			test: /\.js?$/,
-			exclude: /node_modules/,
-			use: {
-				loader: 'babel-loader',
-				options: { babelrc: true, cacheDirectory: true },
+		rules: [
+			{
+				test: /\.js?$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: { babelrc: true, cacheDirectory: true },
+				},
 			},
-		}],
+		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
