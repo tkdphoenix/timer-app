@@ -21,11 +21,13 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			built: BUILD_DATE,
-			charset: config.charset,
+			meta: {
+				built: BUILD_DATE,
+				charset: config.charset,
+				version: config.version,
+			},
 			template: FILE_INDEX,
 			title: PAGE_TITLE,
-			version: config.version,
 		}),
 	],
 	optimization: {

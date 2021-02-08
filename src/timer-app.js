@@ -138,6 +138,7 @@ class TimerApp extends LitElement {
 		const val = input.value
 		const newNode = document.createElement('span')
 		newNode.classList.add('dynaSpan')
+		newNode.setAttribute('data-cy', 'projectTitle')
 		newNode.innerText = val
 		input.parentNode.insertBefore(newNode, input)
 		input.style.display = 'none'
@@ -148,6 +149,7 @@ class TimerApp extends LitElement {
 			const spanElem = this.shadowRoot.querySelector('.dynaSpan')
 			spanElem.parentNode.removeChild(spanElem)
 			this.shadowRoot.querySelector('#projectName').style.display = 'inline'
+			this.shadowRoot.querySelector('#projectName').focus()
 		}
 	}
 
@@ -168,15 +170,48 @@ class TimerApp extends LitElement {
 		return html`
 			<div class="outer">
 				<div class="header">
-					<button class="startBtn" @click="${this.startTimer}">Start</button>
-					<button class="pauseBtn" @click="${this.pauseTimer}">Pause</button>
-					<label id="projectLabel" for="projectName">Project Name</label>
-					<input id="projectName" type="text" role="textbox" @blur="${e => this._setTitle(e)}" />
-					<iron-icon icon="editor:mode-edit" @click="${this._editTitle}"></iron-icon>
-					<iron-icon icon="device:add-alarm" @click="${this._createNewTimer}"></iron-icon>
-					<iron-icon icon="icons:delete" @click="${this._removeTimer}"></iron-icon>
+					<button 
+						class="startBtn"
+						@click="${this.startTimer}"
+						data-cy="startBtn"
+					>Start</button>
+					<button
+						class="pauseBtn"
+						@click="${this.pauseTimer}"
+						data-cy="pauseBtn"
+					>Pause</button>
+					<label
+						id="projectLabel"
+						for="projectName"
+						data-cy="projectLabel"
+					>Project Name</label>
+					<input
+						id="projectName"
+						type="text"
+						role="textbox"
+						@focusout="${e => this._setTitle(e)}"
+						data-cy="projectName"
+					/>
+					<iron-icon
+						icon="editor:mode-edit"
+						@click="${this._editTitle}"
+						data-cy="editTitleBtn"
+						title="edit title"
+					></iron-icon>
+					<iron-icon
+						icon="device:add-alarm"
+						@click="${this._createNewTimer}"
+						data-cy="createNewTimerBtn"
+						title="create a timer"
+					></iron-icon>
+					<iron-icon
+						icon="icons:delete"
+						@click="${this._removeTimer}"
+						data-cy="removeTimerBtn"
+						title="remove timer"
+					></iron-icon>
 				</div>
-				<div class="timerDisplay"></div>
+				<div class="timerDisplay" data-cy="timerDisplay"></div>
 			</div>
 		`
 	}

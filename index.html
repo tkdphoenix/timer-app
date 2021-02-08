@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="<%= htmlWebpackPlugin.options.charset %>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="version" content="<%= htmlWebpackPlugin.options.version %>">
-  <meta name="buildDate" content="<%= htmlWebpackPlugin.options.built %>">
   <title><%= htmlWebpackPlugin.options.title %></title>
   <style>
     body {
@@ -24,7 +21,7 @@
   </style>
 </head>
 <body>
-  <div class="flex">
+  <div id="main" class="flex">
     <timer-app></timer-app>
   </div>
 </body>
