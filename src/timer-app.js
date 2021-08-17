@@ -151,6 +151,8 @@ class TimerApp extends LitElement {
 			this.shadowRoot.querySelector('#projectName').style.display = 'inline'
 			this.shadowRoot.querySelector('#projectName').focus()
 		}
+		this.shadowRoot.querySelector('#projectName').style.display = 'inline'
+		this.shadowRoot.querySelector('#projectName').focus()
 	}
 
 	_createNewTimer() {
@@ -170,21 +172,9 @@ class TimerApp extends LitElement {
 		return html`
 			<div class="outer">
 				<div class="header">
-					<button 
-						class="startBtn"
-						@click="${this.startTimer}"
-						data-cy="startBtn"
-					>Start</button>
-					<button
-						class="pauseBtn"
-						@click="${this.pauseTimer}"
-						data-cy="pauseBtn"
-					>Pause</button>
-					<label
-						id="projectLabel"
-						for="projectName"
-						data-cy="projectLabel"
-					>Project Name</label>
+					<button class="startBtn" @click="${this.startTimer}" data-cy="startBtn">Start</button>
+					<button class="pauseBtn" @click="${this.pauseTimer}" data-cy="pauseBtn">Pause</button>
+					<label id="projectLabel" for="projectName" data-cy="projectLabel">Project Name</label>
 					<input
 						id="projectName"
 						type="text"
